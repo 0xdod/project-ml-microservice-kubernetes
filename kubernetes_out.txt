@@ -1,0 +1,25 @@
+NAME                               READY   STATUS    RESTARTS   AGE
+hello-prediction-f9f75d486-zfs77   1/1     Running   0          9m12s
+
+NAME               TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
+hello-prediction   NodePort    10.110.227.62   <none>        80:32673/TCP   9m21s
+
+* Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 126-490-477
+[2022-08-25 18:30:03,822] INFO in app: JSON payload: 
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2022-08-25 18:30:03,964] INFO in app: Inference payload DataFrame: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2022-08-25 18:30:03,983] INFO in app: Scaling Payload: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2022-08-25 18:30:03,991] INFO in app: Prediction output: [20.35373177134412]
+192.168.65.9 - - [25/Aug/2022 18:30:03] "POST /predict HTTP/1.1" 200 -
