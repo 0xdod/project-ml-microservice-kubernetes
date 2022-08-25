@@ -1,4 +1,4 @@
-<include a CircleCI status badge, here>
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/0xdod/project-ml-microservice-kubernetes/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/0xdod/project-ml-microservice-kubernetes/tree/master)
 
 ## Project Overview
 
@@ -41,6 +41,7 @@ source .devops/bin/activate
 1. Standalone:  `python app.py`
 2. Run in Docker:  `./run_docker.sh`
 3. Run in Kubernetes:  `./run_kubernetes.sh`
+4. Run prediction `./make_prediction.sh`
 
 ### Kubernetes Steps
 
@@ -48,3 +49,15 @@ source .devops/bin/activate
 * Setup and Configure Kubernetes locally
 * Create Flask app in Container
 * Run via kubectl
+
+## Description of files 
+* app.py: main entrypoint for application
+* docker_out.txt: output of container's log after making a predicction
+* Dockerfile: contains all the commands a user could call on the command line to assemble an image
+* kubernetes_out.txt: output of kubernetes deployment pod after making prediction
+* make_prediction.sh: contains command to interact with the running app to make a sample prediction request
+* Makefile: contains commands for convenience to setup, lint and test our app
+* requirements.txt: contains list of external python dependencies
+* run_docker.sh: contains commands to run docker image
+* run_kubernetes.sh: contains commands to deploy app to a kubernetes cluster
+* upload_docker.sh: contains commands to upload docker image to docker hub
