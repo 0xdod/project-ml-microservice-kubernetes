@@ -18,6 +18,7 @@ jobs:
       - run:
           name: "install hadolint"
           command: |
+            sudo apt build-dep python-numpy python-scipy
             sudo wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/download/v1.16.3/hadolint-Linux-x86_64
             sudo chmod +x /bin/hadolint
       - save_cache:
