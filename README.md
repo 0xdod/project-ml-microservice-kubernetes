@@ -45,10 +45,27 @@ source .devops/bin/activate
 
 ### Kubernetes Steps
 
-* Setup and Configure Docker locally
-* Setup and Configure Kubernetes locally
-* Create Flask app in Container
-* Run via kubectl
+#### Setup and Configure Docker locally
+Follow the steps from the official [documentation](https://docs.docker.com/desktop/) to install and setup docker for your operating system.
+
+#### Setup and Configure Kubernetes locally
+If you use docker desktop, you can enable kubernetes in the settings, or follow the guide [here](https://minikube.sigs.k8s.io/docs/start/) to install minikube and setup a kubernetes cluster on your local system
+
+#### Create Flask app in Container
+Build and push the flask app image to docker hub
+```bash
+./run_docker.sh
+./upload_docker.sh
+```
+#### Run via kubectl
+run the following commands to get the container running in kubernetes
+```bash
+./run_kubernetes.sh
+```
+Open a new terminal to test the deployment and run the following commands
+```bash
+./make_prediction.sh
+```
 
 ## Description of files 
 * app.py: main entrypoint for application
